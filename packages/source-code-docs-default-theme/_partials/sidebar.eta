@@ -1,0 +1,13 @@
+<aside id="sidebar">
+    <div id="sidebar__content">
+        <section id="page-logo">
+            <% if (it.subType === "index") { %>
+                <h1 class="h3" id="page-logo__text">ts-doctor API</h1>
+            <% } else { %>
+                <div class="h3" id="page-logo__text">ts-doctor API</div>
+            <% } %>
+        </section>
+        <%~ includeFile("./breadcrumb-navigation.eta", it) %>
+        <%~ includeFile("./main-navigation.eta", it) %>
+    </div>
+</aside>

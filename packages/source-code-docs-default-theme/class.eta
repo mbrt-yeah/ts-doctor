@@ -1,0 +1,248 @@
+<% layout("./_layout", it.page) %>
+
+<article class="chapter class" id="top">
+    <header class="chapter__header">
+        <h2 class="chapter__header__heading class__name"><%= it.page.content.name %></h2>
+        <% if (it.page.content.modifiers.length > 0) { %>
+            <ul class="chapter__header__modifiers">
+                <% it.page.content.modifiers.forEach(function(modifier) { %>
+                    <li><code class="code--inline class__modifier"><%= modifier %></code></li>
+                <% }) %>
+            </ul>
+        <% } %>
+    </header>
+    <% if (it.page.content.extends.length > 0 || it.page.content.implements.length > 0 ) { %>
+        <section class="chapter__content section section--half-bottom-margin">
+            <header class="section__header sr-only">
+                <h3 class="section__header__heading">Information</h3>
+            </header>
+            <ul class="section__content kv-list kv-list--with-border">
+                <% if (it.page.content.extends.length > 0) { %>
+                    <li class="kv-list__entry">
+                        <div class="kv-list__entry__key">Extended class:</div>
+                        <div class="kv-list__entry__value">
+                            <% it.page.content.extends.forEach(function(parentClass) { %>
+                                <code class="code--inline class__parent">
+                                    <a href="#"><%= parentClass %></a>
+                                </code>
+                            <% }) %>
+                        </div>
+                    </li>
+                <% } %>
+                <% if (it.page.content.implements.length > 0) { %>
+                    <li class="kv-list__entry">
+                        <div class="kv-list__entry__key">Implemented interfaces:</div>
+                        <div class="kv-list__entry__value">
+                            <% it.page.content.implements.forEach(function(interface) { %>
+                                <code class="code--inline class__interface">
+                                    <a href="#"><%= interface %></a>
+                                </code>
+                            <% }) %>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </section>
+    <% } %>
+    <% if (it.page.content.description ) { %>
+        <section class="chapter__content section" id="description">
+            <header class="section__header sr-only">
+                <h3 class="section__header__heading">Description</h3>
+            </header>
+            <div class="section__content class__description">
+                <%= it.page.content.description %>
+            </div>
+        </section>
+    <% } %>
+    <% it.page.content.cstrs.forEach(function(cstr) { %>
+        <section class="chapter__content section class__cstr" id="cstr">
+            <header class="section__header">
+                <h3 class="section__header__heading">Constructor</h3>
+                <% if (cstr.modifiers.length > 0) { %>
+                    <ul class="section__header__modifiers">
+                        <% cstr.modifiers.forEach(function(modifier) { %>
+                            <li>
+                                <code class="code--inline class__cstr__modifier"><%= modifier %></code>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            </header>
+            <div class="section__content section__content--with-bg">
+                <section class="subsection">
+                    <header class="subsection__header sr-only">
+                        <h4 class="subsection__header__heading">Signature</h4>
+                    </header>
+                    <pre class="subsection__content">
+                        <code class="class__cstr__signature"><%= cstr.sourceFull %></code>
+                    </pre>
+                </section>
+                <% if (cstr.parameters.length > 0) { %>
+                    <section class="subsection">
+                        <header class="subsection__header">
+                            <h4 class="h5 subsection__header__heading">Parameters</h4>
+                        </header>
+                        <% cstr.parameters.forEach(function(parameter) { %>
+                            <section class="subsection__content subsubsection class__cstr__parameter">
+                                <header class="subsubsection__header">
+                                    <h5 class="h6 subsubsection__header__heading class__cstr__parameter__name">
+                                        house
+                                    </h5>
+                                </header>
+                                <ul class="subsubsection__content kv-list kv-list--with-border">
+                                    <li class="kv-list__entry">
+                                        <div class="kv-list__entry__key">Type:</div>
+                                        <div class="kv-list__entry__value">
+                                            <code class="code--inline class__cstr__parameter__type">
+                                                <a href="#"><%= parameter.type %></a>
+                                            </code>
+                                        </div>
+                                    </li>
+                                    <% if (parameters.description) { %>
+                                        <li class="kv-list__entry">
+                                            <div class="kv-list__entry__key">Description:</div>
+                                            <div 
+                                                class="kv-list__entry__value class__cstr__parameter__description"
+                                            >
+                                                <%= parameters.description %>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            </section>
+                        <% }) %>
+                    </section>
+                <% } %>
+            </div>
+        </section>
+    <% }) %>
+    <% if (it.page.content.properties.length > 0 ) { %>
+        <section class="chapter__content section" id="properties">
+            <header class="section__header">
+                <h3 class="section__header__heading">Properties</h3>
+            </header>
+            <div class="section__content section__content--with-bg">
+                <% it.page.content.properties.forEach(function(property) { %>
+                    <section class="subsection class__property" id="properties__<%= property.name %>">
+                        <header class="subsection__header subsection__header--half-bottom-margin">
+                            <h4 class="h6 subsection__header__heading"><%= property.name %></h4>
+                            <% if (property.modifiers.length > 0 ) { %>
+                                <ul class="subsection__header__modifiers">
+                                    <% property.modifiers.forEach(function(modifier) { %>
+                                        <li>
+                                            <code class="code--inline class__property__modifier">
+                                                <%= modifier %>
+                                            </code>
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            <% } %>
+                        </header>
+                        <ul class="subsection__content kv-list kv-list--with-border">
+                            <li class="kv-list__entry">
+                                <div class="kv-list__entry__key">Type:</div>
+                                <div class="kv-list__entry__value">
+                                    <code class="code--inline class__property__type">
+                                        <%= property.type %>
+                                    </code>
+                                </div>
+                            </li>
+                            <% if (property.description) { %>
+                                <li class="kv-list__entry">
+                                    <div class="kv-list__entry__key">Description:</div>
+                                    <div class="kv-list__entry__value class__property__description">
+                                        <%= property.description %>
+                                    </div>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </section>
+                <% }) %>
+            </div>
+        </section>
+    <% } %>
+    <% if (it.page.content.methods.length > 0 ) { %>
+        <section class="chapter__content section" id="methods">
+            <header class="section__header section__header--double-bottom-margin">
+                <h3 class="section__header__heading">Methods</h3>
+            </header>
+            <% it.page.content.methods.forEach(function(method) { %>
+                <section class="section__content subsection class__method subsection__double-bottom-margin class__method" id="methods__<%= method.name %>">
+                    <header class="subsection__header">
+                        <h4 class="subsection__header__heading class__method__name"><%= method.name %></h4>
+                        <% if (method.modifiers.length > 0 ) { %>
+                            <ul class="subsection__header__modifiers">
+                                <% method.modifiers.forEach(function(modifier) { %>
+                                    <li>
+                                        <code class="code--inline class__method__modifier">
+                                            <%= modifier %>
+                                        </code>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+                    </header>
+                    <div class="subsection__content subsection__content--with-bg">
+                        <section class="subsubsection">
+                            <header class="subsubsection__header sr-only">
+                                <h5 class="subsubsection__header__heading">Signature</h5>
+                            </header>
+                            <pre class="subsubsection__content">
+                                <code class="class__cstr__signature">
+                                    <%= method.sourceFull %>
+                                </code>
+                            </pre>
+                        </section>
+                        <% if (method.parameters.length > 0 ) { %>
+                            <section class="subsubsection">
+                                <header class="subsubsection__header subsubsection__header--double-bottom-margin">
+                                    <h5 class="subsubsection__header__heading">Parameters</h5>
+                                </header>
+
+                                <div class="subsubsection__content">
+
+                                    <!-- Start class method parameter -->
+                                    <section class="subsubsubsection">
+                                        <header class="subsubsubsection__header">
+                                            <h6 class="subsubsubsection__header__heading">
+                                                method
+                                            </h6>
+                                        </header>
+
+                                        <ul class="subsubsubsection__content kv-list kv-list--with-border">
+                                            <li class="kv-list__entry">
+                                                <div class="kv-list__entry__key">Type:</div>
+                                                <div class="kv-list__entry__value">
+                                                    <code class="code--inline class__cstr__parameter__type">
+                                                        ICalculationMethod
+                                                    </code>
+                                                </div>
+                                            </li>
+                                            <li class="kv-list__entry">
+                                                <div class="kv-list__entry__key">Description:</div>
+                                                <div class="kv-list__entry__value class__cstr__parameter__description">
+                                                    The method according to which the calculation should be
+                                                    performed.
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <!-- End class method parameter -->
+
+                                </div>
+                            </section>
+                        <% } %>
+                        <section class="subsubsection">
+                            <header class="subsubsection__header">
+                                <h5 class="subsubsection__header__heading">Returns</h5>
+                                <code class="subsubsection__header__return-type code--inline">
+                                    <%= method.returnsType %>
+                                </code>
+                            </header>
+                        </section>
+                    </div>
+                </section>
+            <% }) %>
+        </section>
+    <% } %>
+</article>

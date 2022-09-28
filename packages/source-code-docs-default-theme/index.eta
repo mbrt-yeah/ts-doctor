@@ -1,0 +1,60 @@
+<% layout("./_layout", it.page) %>
+
+<article class="chapter toc" id="toc">
+    <header class="chapter__header toc__header">
+        <h2 class="chapter__header__heading toc__header__heading">
+            Table of Contents
+        </h2>
+    </header>
+
+    <% if (it.page.content.classes.length > 0) { %>
+        <section class="chapter__content section toc__section" id="toc__classes">
+            <header class="section__header toc__section__header">
+                <h3 class="section__header__heading toc__section__header__heading">
+                    Classes
+                </h3>
+            </header>
+            <menu class="list section__content toc__menu toc__menu--with-bg">
+                <% it.page.content.classes.forEach(function(classDoc) { %>
+                    <li class="toc__menu__entry">
+                        <a href="#" class="name"><%= classDoc.name %></a>
+                    </li>
+                <% }) %>
+            </menu>
+        </section>
+    <% } %>
+
+    <% if (it.page.content.interfaces.length > 0) { %>
+        <section class="chapter__content section toc__section" id="toc__interfaces">
+            <header class="section__header toc__section__header">
+                <h3 class="section__header__heading toc__section__header_heading">
+                    Interfaces
+                </h3>
+            </header>
+            <menu class="list section__content toc__menu toc__menu--with-bg">
+                <% it.page.content.interfaces.forEach(function(interfaceDoc) { %>
+                    <li class="toc__menu__entry">
+                        <a href="#" class="name"><%= interfaceDoc.name %></a>
+                    </li>
+                <% }) %>
+            </menu>
+        </section>
+    <% } %>
+
+    <% if (it.page.content.functions.length > 0) { %>
+        <section class="chapter__content section toc__section" id="toc__functions">
+            <header class="section__header toc__section__header">
+                <h3 class="section__header__heading toc__section__header__heading">
+                    Functions
+                </h3>
+            </header>
+            <menu class="list section__content toc__menu toc__menu--with-bg">
+                <% it.page.content.functions.forEach(function(functionDoc) { %>
+                    <li class="toc__menu__entry">
+                        <a href="#" class="name"><%= functionDoc.name %></a>
+                    </li>
+                <% }) %>
+            </menu>
+        </section>
+    <% } %>
+</article>

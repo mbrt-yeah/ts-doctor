@@ -1,0 +1,5 @@
+interface IContentParameters {
+
+};
+
+export { IContentParameters };

@@ -1,0 +1,8 @@
+<title>
+    <%~ it.name %> - Api Docs
+</title>
+
+<%~ includeFile("./_partials/css-link.eta", {
+    "href": "_assets/css/style.css",
+    "level": it.level,
+}) %>

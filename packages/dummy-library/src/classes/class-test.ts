@@ -1,7 +1,7 @@
 import { IInterfaceTest } from "../interfaces/interface-test";
 
 abstract class ClassAbstract {
-    /*private __property: string;
+    private __property: string;
     private __property2: void;
     private __property3: IInterfaceTest;
 
@@ -13,11 +13,13 @@ abstract class ClassAbstract {
         return "hello";
     }
 
-    public abstract method2(): string;*/
+    public abstract method2(): string;
 };
 
 class ClassTest extends ClassAbstract {
-
+    public method2(): string {
+        throw new Error("Method not implemented.");
+    }
 };
 
 export { ClassAbstract, ClassTest };

@@ -1,0 +1,11 @@
+<nav id="breadcrumb-nav">
+    <ul class="menu">
+        <% if (it.subType === "index") { %>
+            <%~ includeFile("./breadcrumb-navigation-index.eta", it) %>
+        <% } %>
+
+        <% if (it.subType === "class") { %>
+            <%~ includeFile("./breadcrumb-navigation-class.eta", it) %>
+        <% } %>
+    </ul>
+</nav>

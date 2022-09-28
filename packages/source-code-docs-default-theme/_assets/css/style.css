@@ -1,0 +1,552 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, menu,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul, menu {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --- Screen reader only class --- */
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;  /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;            /* 3 */
+}
+
+/* --- Global element styles --- */
+
+a {
+    text-decoration: none;
+}
+
+a,
+a:visited {
+    color: #0074A2;
+    
+}
+
+a:active,
+a:hover {
+    color: #00B7FF;
+    text-decoration: underline;
+}
+
+code {
+    font-family: "IBM Plex Mono", "Courier New", "Courier", "monospace";
+    font-size: 14px;
+}
+
+h1, .h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h2, .h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h3, .h3 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h4, .h4 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h5, .h5 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h6, .h6 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+p:last-child {
+    margin-bottom: 0px;
+}
+
+pre {
+    background-color: #333333;
+    color: #ffffff;
+    margin-bottom: 16px;
+    padding: 16px;
+    white-space: unset;
+}
+
+pre:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: 8px 0;
+}
+
+/* --- Global class styles --- */
+
+.badge {
+    background-color: #333333;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 4px 8px;
+}
+
+.code--inline {
+    background-color: #ffffff;
+    border:1px solid #dddddd;
+    border-radius: 4px;
+    color: #000000;
+    padding: 2px 4px;
+}
+
+/* --- Button styles --- */
+
+.button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.button--as-link {
+    background-color: transparent;
+    border: 0;
+    color: #0074A2;
+}
+
+.button__icon {}
+
+.button__icon--small {
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+/* --- Key/Value list styles --- */
+
+.kv-list--with-border .kv-list__entry {
+    border-bottom: 1px solid #dddddd;
+}
+
+.kv-list--with-border .kv-list__entry:first-child {
+    border-top: 1px solid #dddddd;
+}
+
+.kv-list__entry {
+    align-items: center;
+    display: flex;
+    padding: 8px 0;
+}
+
+.kv-list__entry__key {
+    margin-right: 8px;
+    width: 160px;
+}
+
+/* --- Table of Contents Menu styles --- */
+
+.toc {}
+
+.toc__header {
+    justify-content: space-between;
+}
+
+.toc__header__heading {}
+
+.toc__header__toolbar {}
+
+.toc__section {}
+
+.toc__section__header {
+    justify-content: space-between;
+}
+
+.toc__section__header__heading {}
+
+.toc__section__header__toolbar {}
+
+.toc__menu {
+    -moz-columns: 2;
+    -webkit-columns: 2;
+    columns: 2;
+    list-style-position: inside;
+}
+
+.toc__menu--with-bg {
+    background-color: #efefef;
+    border: 1px solid #dddddd;
+    padding: 24px;
+}
+
+.toc__menu__entry {
+    margin-bottom: 8px;
+}
+
+.toc__menu__entry:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Toolbar styles --- */
+
+.toolbar {
+    align-items: center;
+    display: flex;
+}
+
+.toolbar__item {
+    margin-right: 16px;
+}
+
+.toolbar__item:last-child {
+    margin-right: 0;
+}
+
+/* --- Tool styles --- */
+
+.tool {}
+
+.tool--search {}
+
+.tool--search input[type=search] {
+    border: 1px solid #dddddd;
+    padding: 4px;
+}
+
+/* --- Overall layout and design styles --- */
+
+html {
+    background-color: #f8f8f8;
+}
+
+body {
+    color: #333;
+    display: flex;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+#sidebar {
+    margin-right: 72px;
+    max-width: 360px;
+    min-width: 360px;
+    width: 360px;
+}
+
+#sidebar__content {
+    background-color: #333333;
+    bottom: 0;
+    color: #f8f8f8;
+    position: fixed;
+    top: 0;
+    width: 360px;
+}
+
+#page-logo,
+#breadcrumb-nav,
+#main-nav {
+    box-sizing: border-box;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: fixed;
+    width: 360px;
+}
+
+#page-logo {
+    top: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#page-logo__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#breadcrumb-nav {
+    background-color: #222222;
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    top: 83px;
+}
+
+#breadcrumb-nav .menu {
+    display: flex;
+}
+
+#breadcrumb-nav .menu__item {}
+
+#breadcrumb-nav .menu__item--current-page {
+    opacity: 0.5;
+}
+
+#breadcrumb-nav .menu__item a,
+#breadcrumb-nav .menu__item a:visited {
+    color: #f8f8f8;
+}
+
+#breadcrumb-nav .menu__item a:active,
+#breadcrumb-nav .menu__item a:hover {
+    color: #00B7FF;
+}
+
+#breadcrumb-nav .menu__item__separator {
+    white-space: pre;
+}
+
+#main-nav {
+    bottom: 24;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 146px;
+    bottom: 24px;
+    width: 336px;
+}
+
+#main-nav .menu {}
+
+#main-nav .menu__item {
+    margin-bottom: 20px;
+}
+
+#main-nav .menu__item a {
+    display: block;
+}
+
+#main-nav .menu__item a {
+    padding: 4px 0;
+}
+
+#main-nav .menu__item  a,
+#main-nav .menu__item  a:visited {
+    color: #f8f8f8;
+}
+
+#main-nav .menu__item  a:hover,
+#main-nav .menu__item  a:active {
+    color: #00B7FF;
+}
+
+#main-nav .menu__item > .menu {
+    border-left: 1px solid #dddddd;
+    margin-top: 12px;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+#main-nav .menu__item > .menu > .menu__item {
+    margin-bottom: 8px;
+}
+
+#content {
+    margin: 24px 24px 24px 0;
+    width: 720px;
+}
+
+/* --- Chapter styles --- */
+
+.chapter {
+    margin-bottom: 48px;
+}
+
+.chapter:last-child {
+    margin-bottom: 0;
+}
+
+.chapter__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.chapter__header__heading {}
+
+.chapter__header__modifiers {
+    margin-left: 8px;
+}
+
+.chapter__content {}
+
+/* --- Section syles --- */
+
+.section {
+    margin-bottom: 48px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section--half-bottom-margin {
+    margin-bottom: 24px;
+}
+
+.section__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.section__header--double-bottom-margin {
+    margin-bottom: 48px;
+}
+
+.section__header__heading {}
+
+.section__header__modifiers {
+    margin-left: 8px;
+}
+
+.section__content {}
+
+.section__content--with-bg {
+    background-color: #efefef;
+    border: 1px solid #dddddd;
+    padding: 24px;
+}
+
+/* --- Subsection styles --- */
+
+.subsection {
+    margin-bottom: 24px;
+}
+
+.subsection__double-bottom-margin {
+    margin-bottom: 48px;
+}
+
+.subsection:last-child {
+    margin-bottom: 0px;
+}
+
+.subsection__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.subsection__header--half-bottom-margin {
+    margin-bottom: 12px;
+}
+
+.subsection__header__heading {}
+
+.subsection__header__modifiers {
+    margin-left: 8px;
+}
+
+.subsection__content {}
+
+.subsection__content--with-bg {
+    background-color: #efefef;
+    border: 1px solid #dddddd;
+    padding: 24px;
+}
+
+/* --- Subsubsection styles --- */
+
+.subsubsection {
+    margin-bottom: 24px;
+}
+
+.subsubsection:last-child {
+    margin-bottom: 0px;
+}
+
+.subsubsection__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.subsubsection__header--double-bottom-margin {
+    margin-bottom: 24px;
+}
+
+.subsubsection__header__heading {}
+
+.subsubsection__header__return-type {
+    margin-left: 8px;
+}
+
+.subsubsection__content {}
+
+/* --- Subsubsubsection styles --- */
+
+.subsubsubsection {
+    margin-bottom: 24px;
+}
+
+.subsubsubsection:last-child {
+    margin-bottom: 0px;
+}
+.subsubsubsection__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 12px;
+}

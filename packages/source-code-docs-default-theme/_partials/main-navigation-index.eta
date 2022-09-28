@@ -1,0 +1,24 @@
+<nav id="main-nav">
+    <ul class="menu">
+        <li class="menu__item">
+            <a href="#toc">Table of Contents</a>
+            <ul class="menu">
+                <% if (it.content.classes.length > 0) { %>
+                    <li class="menu__item">
+                        <a href="#toc__classes">Classes</a>
+                    </li>
+                <% } %>
+                <% if (it.content.interfaces.length > 0) { %>
+                    <li class="menu__item">
+                        <a href="#toc__interfaces">Interfaces</a>
+                    </li>
+                <% } %>
+                <% if (it.content.functions.length > 0) { %>
+                    <li class="menu__item">
+                        <a href="#toc__functions">Functions</a>
+                    </li>
+                <% } %>
+            </ul>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,19 @@
+{
+    "name": "@ts-doctor/placeholder",
+    "version": "0.1.0",
+    "description": "Just a placeholder package",
+    "author": "Matthias Einbrodt",
+    "license": "MIT",
+    "keywords": [
+        "placeholder",
+        "typescript"
+    ],
+    "homepage": "https://github.com/mbrt-yeah/ts-doctor",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mbrt-yeah/ts-doctor"
+    },
+    "bugs": {
+        "url": "https://github.com/mbrt-yeah/ts-doctor/issues"
+    }
+}

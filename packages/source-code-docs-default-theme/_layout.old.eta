@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <%~ includeFile("./_partials/head.eta", it.head) %>
+    <body>
+        <%~ includeFile("./_partials/sidebar.eta", { 
+            "pageData": it.pageData,
+            "pageType": it.pageType 
+        }) %>
+        <main id="content">
+            <%~ it.body %>
+        </main>
+    </body>
+</html>
